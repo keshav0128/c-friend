@@ -1,0 +1,30 @@
+#include <iostream>
+using namespace std;
+class woo{
+  private:
+  int a,b;
+  public:
+  void set(int x,int y)
+  {
+      a=x;
+      b=y;
+  }
+  void show()
+  {
+      cout<<"a is"<<a<<"b ="<<b<<endl;
+  }
+  friend void fun(woo);
+};
+void fun(woo w)
+{
+    cout<<"sum is"<<w.a+w.b<<endl;
+}
+
+int main() {
+    woo w1;
+    w1.set(5,9);
+    w1.show();
+    fun(w1);
+	
+	return 0;
+}
